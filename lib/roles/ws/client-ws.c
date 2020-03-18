@@ -168,10 +168,10 @@ lws_generate_client_ws_handshake(struct lws *wsi, char *p, const char *conn1)
 	strcpy(p, key_b64);
 	p += strlen(key_b64);
 	p += sprintf(p, "\x0d\x0a");
-	if (lws_hdr_simple_ptr(wsi, _WSI_TOKEN_CLIENT_SENT_PROTOCOLS))
-		p += sprintf(p, "Sec-WebSocket-Protocol: %s\x0d\x0a",
-		     lws_hdr_simple_ptr(wsi,
-				     _WSI_TOKEN_CLIENT_SENT_PROTOCOLS));
+	// if (lws_hdr_simple_ptr(wsi, _WSI_TOKEN_CLIENT_SENT_PROTOCOLS))
+	// 	p += sprintf(p, "Sec-WebSocket-Protocol: %s\x0d\x0a",
+	// 	     lws_hdr_simple_ptr(wsi,
+	// 			     _WSI_TOKEN_CLIENT_SENT_PROTOCOLS));
 
 	/* tell the server what extensions we could support */
 
